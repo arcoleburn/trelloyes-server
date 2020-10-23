@@ -54,7 +54,7 @@ cardRouter
   .delete((req, res) => {
     const { id } = req.params;
 
-    const cardIndex = cards.findIndex((c) => c.id == id);
+    const cardIndex = cards.findIndex((c) => c.id === id);
 
     if (cardIndex === -1) {
       logger.error(`Card with id ${id} not found.`);

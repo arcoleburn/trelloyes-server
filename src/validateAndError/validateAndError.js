@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 'use strict';
+const logger = require('../logger');
 
 function errorHandler(error, req, res, next) {
   let response;

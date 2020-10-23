@@ -17,7 +17,7 @@ listRouter
     const { header, cardIds = [] } = req.body;
 
     if (!header) {
-      logger.error(`Header is required`);
+      logger.error('Header is required');
       return res.status(400).send('Invalid data');
     }
 
@@ -25,7 +25,7 @@ listRouter
     if (cardIds.length > 0) {
       let valid = true;
       cardIds.forEach((cid) => {
-        const card = cards.find((c) => c.id == cid);
+        const card = cards.find((c) => c.id === cid);
         if (!card) {
           logger.error(
             `Card with id ${cid} not found in cards array.`
@@ -61,7 +61,7 @@ listRouter
   .route('/list/:id')
   .get((req, res) => {
     const { id } = req.params;
-    const list = lists.find((li) => li.id == id);
+    const list = lists.find((li) => li.id === id);
 
     if (!list) {
       logger.error(`List with id ${id} not found.`);
@@ -72,7 +72,7 @@ listRouter
   .delete((req, res) => {
     const { id } = req.params;
 
-    const listIndex = lists.findIndex((li) => li.id == id);
+    const listIndex = lists.findIndex((li) => li.id === id);
 
     if (listIndex === -1) {
       logger.error(`List with id ${id} not found.`);
