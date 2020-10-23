@@ -42,12 +42,14 @@ cardRouter
   .route('/card/:id')
   .get((req, res) => {
     const { id } = req.params;
+   
     const card = cards.find((c) => c.id === id);
 
     if (!card) {
       logger.error(`card with ID ${id} not found`);
       return res.status(404).send('card not found');
     }
+    return res.json(card);
   })
   .delete((req, res) => {
     const { id } = req.params;
