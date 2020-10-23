@@ -53,7 +53,7 @@ const cards = [
 
 const lists = [
   {
-    id: 1,
+    id: 1, 
     header: 'List One',
     cardIds: [1],
   },
